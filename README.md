@@ -5,13 +5,16 @@
 ![](https://img.shields.io/badge/TensorFlow-1.14.0-%23FF6F00?style=plastic&logo=tensorflow)
 ![](https://img.shields.io/badge/Python-3.6.9-%233776AB?style=plastic&logo=python)
 
+## :computer: Visit: https://cartypeclassifier.herokuapp.com/
+
 # Table of Contents
 - [About](#about)
+- [Motivation](#motivation)
 - [Dataset](#dataset)
 - [Usage](#usage)
 
 ## About
-We know that there are different types of Car's type like Hatchback, Sedan, SUV,and so on. Here, I'm trying to classify only Sedan and SUV.
+We know that there are different types of Cars like Hatchback, Sedan, SUV,and so on. Here, I'm trying to classify only Sedan and SUV.
 
 ## Motivation
 There are many challenges in Image Classfication, out of them I'm focusing on two challenges:
@@ -26,3 +29,28 @@ The second challenge I'm trying to solve is _View-Point Variation_ because the i
 I have manually scrapped images from Google Images. There are total 100 images belonging to 2 classes _(50 in each)_ with various dimensions, as well as rotation. 
 
 ## Usage 
+To run locally 
+1. Clone the Repository.
+```bash
+    $ git clone https://github.com/thesauravkarmakar/CarTypeClassifier.git
+ ```
+2. Install dependencies 
+```bash
+    $ pip install -r requirements.txt
+ ```
+3. Edit app.py and change this part _(from line 35 to 37)_
+```bash
+    clApp = ClientApp()
+    if __name__ == "__main__":
+        app.run(port=8000, debug=True)
+ ```	
+ to 
+ ```bash
+    if __name__ == "__main__":
+        clApp = ClientApp()
+        app.run(host=0.0.0.0,port=8000, debug=True)
+ ```	
+ 4. Run app.py
+```bash
+    $ python app.py
+ ```
